@@ -2,7 +2,7 @@ package com.example.gook
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import com.example.gook.ui.main.MainFragment
+import com.example.gook.ui.library.LibraryFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,7 +11,7 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.container, MainFragment.newInstance())
+                    .replace(R.id.container, LibraryFragment.newInstance())
                     .commitNow()
         }
     }

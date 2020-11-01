@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">gook</string>
+    <string name="library_header">Library</string>
 </resources>
