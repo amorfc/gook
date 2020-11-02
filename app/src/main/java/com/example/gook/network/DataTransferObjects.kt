@@ -18,5 +18,4 @@ fun NetworkSearchedVolumesConatiner.asDomainModel():List<SearchedVolume>{
                 volumeInfo = it.volumeInfo
         )
     }
-    }
 }

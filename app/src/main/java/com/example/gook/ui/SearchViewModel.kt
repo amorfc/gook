@@ -5,8 +5,10 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.gook.domain.model.domainsearchedvolume.SearchedVolume
 import com.example.gook.network.Network
 import com.example.gook.network.model.networksearchedvolumescontainer.NetworkSearchedVolume
+import com.example.gook.repository.VolumesRepository
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -18,28 +20,16 @@ class SearchViewModel(val app: Application) : ViewModel() {
 
     val viewModelJob = Job()
     val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
+    val volumesRepository = VolumesRepository()
 
-
-    private val _searchedVolumeList = MutableLiveData<List<NetworkSearchedVolume>>()
-    val searchedVolumeList: LiveData<List<NetworkSearchedVolume>>
-        get() = _searchedVolumeList
+    private val _searchedVolumeList = MutableLiveData<List<SearchedVolume>>()
+    val searchedVolumeList: LiveData<List<SearchedVolume>>
+        get() = volumesRepository.searchedVolume
 
     fun getSearchedVolumes(query: String){
         coroutineScope.launch {
 
-            val searchedList = Network.googleBookApi.getSearchedVolumes(query)
-
-            try {
-
-                val searchedResult = searchedList.await()
-                _searchedVolumeList.value = searchedResult.items
-
-            }catch(t:Throwable){
-
-                throw t
-
-            }
-
+            volumesRepository.getSearchedVolumes(query = query)
         }
     }
 
