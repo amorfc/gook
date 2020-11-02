@@ -11,6 +11,7 @@ import retrofit2.Retrofit
 import retrofit2.converter.moshi.MoshiConverterFactory
 import retrofit2.http.GET
 import retrofit2.http.Path
+import retrofit2.http.Query
 import java.io.IOException
 
 const val api_key = "AIzaSyBeLN67NyIppTq8tgNsMA1imRtahNk_c0Y"
@@ -32,7 +33,13 @@ private val moshi = Moshi.Builder()
 interface Service {
 
     @GET("volumes/{volumeId}")
-    fun getVolume(@Path("volumeId") volumeId: String): Deferred<NetworkVolume>
+    fun getVolume(
+            @Path("volumeId") volumeId: String): Deferred<NetworkVolume>
+
+    @GET("volumes")
+    fun getSearchedVolumes(
+            @Query("q") query: String
+    ): Deferred<SearchedVolumesContainer>
 
 }
 

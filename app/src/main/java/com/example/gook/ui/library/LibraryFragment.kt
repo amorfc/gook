@@ -22,12 +22,6 @@ class LibraryFragment : Fragment() {
             LibraryViewModel::class.java)
     }
 
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        // TODO: Use the ViewModel
-        //Burada fragment ile alakali view hiyerarşi hazırlanması bittiğinde buraya gelir data observe etmeler burada yapılabilir
-    }
-
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View {
         val binding: LibraryFragmentBinding = DataBindingUtil.inflate(
@@ -42,6 +36,11 @@ class LibraryFragment : Fragment() {
         return binding.root
     }
 
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        // TODO: Use the ViewModel
+        //Burada fragment ile alakali view hiyerarşi hazırlanması bittiğinde buraya gelir data observe etmeler burada yapılabilir
+    }
 }
 
 
