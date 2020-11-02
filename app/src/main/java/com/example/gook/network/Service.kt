@@ -37,11 +37,8 @@ interface Service {
 //    @GET("volumes/{volumeId}")
 //    fun getVolume(
 //            @Path("volumeId") volumeId: String): Deferred<NetworkVolume>
-
     @GET("volumes")
-    fun getSearchedVolumes(
-            @Query("q") query: String
-    ): Deferred<NetworkSearchedVolumesConatiner>
+    fun getSearchedVolumes(@Query("q") query: String): Deferred<NetworkSearchedVolumesConatiner>
 
 }
 
@@ -56,3 +53,4 @@ object Network {
 
     val googleBookApi = retrofit.create(Service::class.java)
 }
+

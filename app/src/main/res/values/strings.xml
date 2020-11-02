@@ -2,4 +2,5 @@
     <string name="app_name">gook</string>
     <string name="library_header">Library</string>
     <string name="search_for_a_book">Search for a Book</string>
+    <string name="with_binding_adapter_this_view_holds_searched_volumes_photos">With Binding adapter this view holds searched volumes photos</string>
 </resources>
