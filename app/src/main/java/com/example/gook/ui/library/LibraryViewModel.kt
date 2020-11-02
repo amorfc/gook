@@ -17,9 +17,9 @@ class LibraryViewModel(val app: Application) : ViewModel() {
 
     init {
         viewModelScope.launch {
-
-            val test = Network.googleBookApi.getVolume("s1gVAAAAYAAJ").await()
-            Timber.i(test.toString())
+//
+//            val test = Network.googleBookApi.getVolume("s1gVAAAAYAAJ").await()
+//            Timber.i(test.toString())
         }
     }
 

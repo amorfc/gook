@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import com.example.gook.network.Network
-import com.example.gook.network.SearchedVolumesContainer
+import com.example.gook.network.model.networksearchedvolumescontainer.NetworkSearchedVolume
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Job
@@ -20,8 +20,8 @@ class SearchViewModel(val app: Application) : ViewModel() {
     val coroutineScope = CoroutineScope(viewModelJob + Dispatchers.Main)
 
 
-    private val _searchedVolumeList = MutableLiveData<List<SearchedVolumesContainer.SearchedVolume>>()
-    val searchedVolumeList: LiveData<List<SearchedVolumesContainer.SearchedVolume>>
+    private val _searchedVolumeList = MutableLiveData<List<NetworkSearchedVolume>>()
+    val searchedVolumeList: LiveData<List<NetworkSearchedVolume>>
         get() = _searchedVolumeList
 
     fun getSearchedVolumes(query: String){
@@ -32,7 +32,7 @@ class SearchViewModel(val app: Application) : ViewModel() {
             try {
 
                 val searchedResult = searchedList.await()
-                _searchedVolumeList.value = searchedResult.searchedVolumes
+                _searchedVolumeList.value = searchedResult.items
 
             }catch(t:Throwable){
 

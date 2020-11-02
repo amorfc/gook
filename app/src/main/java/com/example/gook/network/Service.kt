@@ -1,5 +1,7 @@
 package com.example.gook.network
 
+import com.example.gook.network.model.networksearchedvolumescontainer.NetworkSearchedVolume
+import com.example.gook.network.model.networksearchedvolumescontainer.NetworkSearchedVolumesConatiner
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import com.squareup.moshi.Moshi
 import com.squareup.moshi.kotlin.reflect.KotlinJsonAdapterFactory
@@ -31,15 +33,15 @@ private val moshi = Moshi.Builder()
     .build()
 
 interface Service {
-
-    @GET("volumes/{volumeId}")
-    fun getVolume(
-            @Path("volumeId") volumeId: String): Deferred<NetworkVolume>
+//
+//    @GET("volumes/{volumeId}")
+//    fun getVolume(
+//            @Path("volumeId") volumeId: String): Deferred<NetworkVolume>
 
     @GET("volumes")
     fun getSearchedVolumes(
             @Query("q") query: String
-    ): Deferred<SearchedVolumesContainer>
+    ): Deferred<NetworkSearchedVolumesConatiner>
 
 }
 
