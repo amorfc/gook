@@ -7,10 +7,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
-import androidx.lifecycle.ViewModel
 import com.example.gook.R
 import com.example.gook.databinding.LibraryFragmentBinding
-import java.lang.IllegalArgumentException
 
 class LibraryFragment : Fragment() {
 
@@ -20,7 +18,8 @@ class LibraryFragment : Fragment() {
 
         }
 
-        ViewModelProvider(this,LibraryViewModel.Factory(app = activity.application)).get(LibraryViewModel::class.java)
+        ViewModelProvider(this, LibraryViewModel.Factory(app = activity.application)).get(
+            LibraryViewModel::class.java)
     }
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
