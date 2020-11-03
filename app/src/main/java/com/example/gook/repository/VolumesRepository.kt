@@ -1,29 +1,26 @@
 package com.example.gook.repository
 
 import androidx.lifecycle.LiveData
-import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.Transformations
+import com.example.gook.database.VolumeDatabase
 import com.example.gook.domain.model.domainsearchedvolume.SearchedVolume
 import com.example.gook.network.Network
+import com.example.gook.network.asDatabaseModel
 import com.example.gook.network.asDomainModel
-import com.example.gook.network.model.networksearchedvolumescontainer.NetworkSearchedVolume
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 
-class VolumesRepository() {
+class VolumesRepository(val database: VolumeDatabase) {
 
-    private val _searchedVolumes = MutableLiveData<List<SearchedVolume>>()
-    val searchedVolume: LiveData<List<SearchedVolume>>
-        get() = _searchedVolumes
-
+    val  searchedVolumeModelList: LiveData<List<SearchedVolume>> = Transformations.map(database.searchedVolumeDao.getSearchedVolume()){
+        it.asDomainModel()
+    }
     suspend fun getSearchedVolumes(query: String){
-        withContext(Dispatchers.Main){
+        withContext(Dispatchers.IO){
 
             val searchedVolumeResult = Network.googleBookApi.getSearchedVolumes(query).await()
-
-            _searchedVolumes.value = searchedVolumeResult.asDomainModel()
-
+            database.searchedVolumeDao.insertAll(*searchedVolumeResult.asDatabaseModel())
         }
-
     }
 
 }
