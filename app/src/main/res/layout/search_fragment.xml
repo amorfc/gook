@@ -12,29 +12,48 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.search.SearchFragment">
+        tools:context=".ui.search.SearchFragment"
+        android:background="@drawable/mask">
+
+        <ImageButton
+            android:id="@+id/button"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="50dp"
+            android:adjustViewBounds="false"
+            android:background="@drawable/button_gradient_radius"
+            android:src="@android:drawable/ic_search_category_default"
+            android:translationZ="90dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editSearchText"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/editSearchText"
+            app:layout_constraintTop_toTopOf="@+id/editSearchText"
+            app:layout_constraintVertical_bias="1.0"
+            android:contentDescription="TODO" />
 
         <EditText
             android:id="@+id/editSearchText"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="10dp"
-            android:layout_marginEnd="20dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="40dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="50dp"
+            android:background="@drawable/edit_text_bacground"
+            android:elevation="10dp"
             android:ems="10"
-            android:text="@string/search_for_a_book"
-            app:layout_constraintEnd_toStartOf="@+id/button"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Search"
-            app:layout_constraintBottom_toBottomOf="@+id/editSearchText"
+            android:hint="@string/search_for_a_book"
+            android:imeActionLabel="@string/search"
+            android:imeOptions="actionDone"
+            android:inputType="text"
+            android:paddingStart="30dp"
+            android:selectAllOnFocus="true"
+            android:singleLine="true"
+            android:textSize="12sp"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="@+id/editSearchText" />
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:autofillHints="" />
+
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/searchedVolumesRV"
@@ -42,18 +61,20 @@
             android:layout_height="0dp"
             android:layout_marginStart="12dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="12dp"
+            android:layout_marginEnd="32dp"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/editSearchText" />
+            app:layout_constraintTop_toBottomOf="@+id/editSearchText"
+            app:layout_constraintVertical_bias="1.0" />
 
         <ProgressBar
             android:id="@+id/progressBar"
             style="?android:attr/progressBarStyle"
-            android:layout_width="150dp"
-            android:layout_height="150dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
             app:isVisible="@{viewModel.searchedStatus}"
             app:layout_constraintBottom_toBottomOf="@+id/searchedVolumesRV"
             app:layout_constraintEnd_toEndOf="@+id/searchedVolumesRV"

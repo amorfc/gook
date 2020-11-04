@@ -29,6 +29,10 @@ class SearchViewModel(val app: Application) : ViewModel() {
 
     val searchedVolumeList: LiveData<List<SearchedVolume>> = volumesRepository.searchedVolumeModelList
 
+    init {
+        getSearchedVolumes("Beyza")
+    }
+
     fun getSearchedVolumes(query: String){
         viewModelScope.launch {
 

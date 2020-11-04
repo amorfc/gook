@@ -2,6 +2,7 @@ package com.example.gook.utils
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
@@ -32,5 +33,12 @@ fun setVisible(view: View, status:SearchedStatus?){
         SearchedStatus.LOADING -> view.visibility = View.VISIBLE
         SearchedStatus.DONE -> view.visibility = View.GONE
         else -> view.visibility = View.GONE
+    }
+}
+
+@BindingAdapter("listString")
+fun setListtoText(textView: TextView,stringList: List<String>?){
+    stringList?.let {
+        textView.text = stringList.joinToString()
     }
 }

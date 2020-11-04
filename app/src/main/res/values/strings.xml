@@ -1,6 +1,10 @@
 <resources>
     <string name="app_name">gook</string>
     <string name="library_header">Library</string>
-    <string name="search_for_a_book">Search for a Book</string>
+    <string name="search_for_a_book">Search for a Book…</string>
     <string name="with_binding_adapter_this_view_holds_searched_volumes_photos">With Binding adapter this view holds searched volumes photos</string>
+    <string name="search_edit_text_empty_error">You must enter something before search</string>
+    <string name="search">Search</string>
+    <string name="logo_desc">SearchButtonLogodesc</string>
+    <string name="add_now">Add Now</string>
 </resources>
