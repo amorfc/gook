@@ -13,4 +13,5 @@
     <color name="black_10">#19000000</color>
     <color name="bright_teal">#00edc5</color>
     <color name="bright_sky_blue">#04b3fd</color>
+    <color name="volumeContentColor">#FCFCFC</color>
 </resources>

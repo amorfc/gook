@@ -7,4 +7,5 @@
     <string name="search">Search</string>
     <string name="logo_desc">SearchButtonLogodesc</string>
     <string name="add_now">Add Now</string>
+    <string name="typed_by">by</string>
 </resources>
