@@ -35,10 +35,8 @@ class SearchFragment : Fragment() {
         binding.lifecycleOwner = this
         binding.viewModel = viewModel
 
-        layoutManager = GridLayoutManager(this.context,3)
         searchedVolumeListAdapter = SearchedVolumeListAdapter()
 
-        binding.searchedVolumesRV.layoutManager = layoutManager
         binding.searchedVolumesRV.adapter = searchedVolumeListAdapter
 
         binding.button.setOnClickListener {
