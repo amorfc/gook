@@ -5,6 +5,8 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import com.example.gook.database.VolumeDatabase
+import com.example.gook.database.getDatabaseInstance
 import com.example.gook.domain.model.domainsearchedvolume.SearchedVolume
 import com.example.gook.repository.VolumesRepository
 import kotlinx.coroutines.CoroutineScope
@@ -20,8 +22,8 @@ class SearchViewModel(val app: Application) : ViewModel() {
 
     val viewModelJob = Job()
     val viewModelScope = CoroutineScope(viewModelJob + Dispatchers.Main)
-//    val database: VolumeDatabase = getDatabaseInstance(app)
-    val volumesRepository = VolumesRepository()
+    val database: VolumeDatabase = getDatabaseInstance(app)
+    val volumesRepository = VolumesRepository(database = database)
 
     val _searchedStatus = MutableLiveData<SearchedStatus?>()
     val searchedStatus: LiveData<SearchedStatus?>
@@ -29,9 +31,6 @@ class SearchViewModel(val app: Application) : ViewModel() {
 
     val searchedVolumeList: LiveData<List<SearchedVolume>> = volumesRepository.searchedVolumeModelList
 
-    init {
-        getSearchedVolumes("Beyza")
-    }
 
     fun getSearchedVolumes(query: String){
         viewModelScope.launch {
