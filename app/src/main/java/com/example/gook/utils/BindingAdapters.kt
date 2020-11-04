@@ -8,7 +8,6 @@ import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.gook.R
-import com.example.gook.domain.model.domainsearchedvolume.SearchedVolume
 import com.example.gook.ui.SearchedStatus
 
 
@@ -39,6 +38,6 @@ fun setVisible(view: View, status:SearchedStatus?){
 @BindingAdapter("listString")
 fun setListtoText(textView: TextView,stringList: List<String>?){
     stringList?.let {
-        textView.text = stringList.joinToString()
+        textView.text = "by " + stringList.joinToString()
     }
 }
