@@ -6,7 +6,7 @@
     <data>
         <variable
             name="viewModel"
-            type="com.example.gook.ui.library.LibraryViewModel" />
+            type="com.example.gook.viewmodel.LibraryViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

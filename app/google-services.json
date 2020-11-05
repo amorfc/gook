@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "951637535143",
+    "firebase_url": "https://fir-7d618.firebaseio.com",
+    "project_id": "fir-7d618",
+    "storage_bucket": "fir-7d618.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:951637535143:android:51022d2d1600262c0a6e82",
+        "android_client_info": {
+          "package_name": "com.example.gook"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "951637535143-t5eis4fjei6u2fucf1qcreckocalofv6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.gook",
+            "certificate_hash": "5b786e66429f178344b80b4c56d80a221684935b"
+          }
+        },
+        {
+          "client_id": "951637535143-gnujm0vp2pbl891ad226ugndokn0ac16.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCMNk290blGMqPgbTpECwF8oM3i9rGVhpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "951637535143-gnujm0vp2pbl891ad226ugndokn0ac16.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "951637535143-ifcnrf8lmk12cmvkl3pn1jh5130pctvv.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "amorf.tech.Gook"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

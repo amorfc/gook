@@ -2,19 +2,16 @@ package com.example.gook.ui.search
 
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.Observer
-import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.gook.R
 import com.example.gook.databinding.SearchFragmentBinding
-import com.example.gook.ui.SearchViewModel
+import com.example.gook.viewmodel.SearchViewModel
 import kotlinx.android.synthetic.main.search_fragment.*
-import timber.log.Timber
 
 class SearchFragment : Fragment() {
 

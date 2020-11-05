@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import com.example.gook.R
 import com.example.gook.databinding.LibraryFragmentBinding
+import com.example.gook.viewmodel.LibraryViewModel
 
 class LibraryFragment : Fragment() {
 

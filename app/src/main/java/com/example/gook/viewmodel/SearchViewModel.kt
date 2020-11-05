@@ -1,4 +1,4 @@
-package com.example.gook.ui
+package com.example.gook.viewmodel
 
 import android.app.Application
 import androidx.lifecycle.LiveData
