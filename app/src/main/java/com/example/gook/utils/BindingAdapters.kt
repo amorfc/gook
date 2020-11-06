@@ -2,12 +2,14 @@ package com.example.gook.utils
 
 import android.view.View
 import android.widget.ImageView
+import android.widget.ProgressBar
 import android.widget.TextView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 import com.bumptech.glide.request.RequestOptions
 import com.example.gook.R
+import com.example.gook.repository.RegisterStatus
 import com.example.gook.viewmodel.SearchedStatus
 
 
@@ -39,5 +41,13 @@ fun setVisible(view: View, status: SearchedStatus?){
 fun setListtoText(textView: TextView,stringList: List<String>?){
     stringList?.let {
         textView.text = "by " + stringList.joinToString()
+    }
+}
+
+@BindingAdapter("registerStatus")
+fun setProgressBarStatus(view: View,status: RegisterStatus?){
+    when(status){
+        RegisterStatus.LOADING->view.visibility = View.VISIBLE
+        else->view.visibility = View.GONE
     }
 }

@@ -12,5 +12,10 @@
         android:id="@+id/loginFragment"
         android:name="com.example.gook.ui.login.LoginFragment"
         android:label="login_fragment"
-        tools:layout="@layout/login_fragment" />
+        tools:layout="@layout/login_fragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_searchFragment"
+            app:destination="@id/searchFragment"
+            app:popUpTo="@id/loginFragment" />
+    </fragment>
 </navigation>

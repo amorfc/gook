@@ -1,4 +1,8 @@
 package com.example.gook.repository
 
-class FirebaseUserLiveData {
+import androidx.lifecycle.LiveData
+import com.google.firebase.auth.FirebaseUser
+
+class FirebaseUserLiveData: LiveData<FirebaseUser?>() {
+
 }
