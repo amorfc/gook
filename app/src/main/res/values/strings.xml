@@ -5,6 +5,7 @@
     <string name="with_binding_adapter_this_view_holds_searched_volumes_photos">With Binding adapter this view holds searched volumes photos</string>
     <string name="search_edit_text_empty_error">You must enter something before search</string>
     <string name="user_name_is_not_valid">Username is not valid</string>
+    <string name="firebase_exception">There is a problem at our server please try again later</string>
     <string name="password_is_not_valid">Password must be more than 5 char</string>
     <string name="username_or_password_isNotValid">Username or Password is not valid</string>
     <string name="search">Search</string>

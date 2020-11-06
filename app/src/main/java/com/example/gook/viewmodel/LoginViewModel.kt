@@ -1,6 +1,5 @@
 package com.example.gook.viewmodel
 
-import android.service.autofill.RegexValidator
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -9,9 +8,7 @@ import com.example.gook.repository.AuthRepository
 import com.example.gook.repository.RegisterStatus
 import com.example.gook.ui.login.Form
 import com.example.testlogin.ui.login.LoginFormState
-import com.example.testlogin.ui.login.LoginResult
-import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.auth.FirebaseUser
+import com.example.gook.repository.LoginResult
 
 
 class LoginViewModel : ViewModel() {
